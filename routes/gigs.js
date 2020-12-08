@@ -28,9 +28,11 @@ router.get("/", (req, res) =>
     })
     .catch((err) => console.log(err))
 );
+// Display add gig form
+router.get("/add", (req, res) => res.render("add"));
 
 // Add gig
-router.get("/add", (req, res) => {
+router.post("/add", (req, res) => {
   const data = {
     title: "Wordpress Site",
     technologies: "Wordpress, php , html, css",
