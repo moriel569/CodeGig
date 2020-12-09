@@ -17,6 +17,10 @@ const app = express();
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Body parser
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
